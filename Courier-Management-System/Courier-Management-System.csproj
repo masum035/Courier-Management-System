@@ -10,18 +10,14 @@
     </PropertyGroup>
 
     <ItemGroup>
+        <PackageReference Include="Microsoft.AspNet.Identity.EntityFramework" Version="2.2.4" />
+        <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="8.0.5" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.5" />
         <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.20.1"/>
     </ItemGroup>
 
     <ItemGroup>
         <ProjectReference Include="..\Courier-Management-System.ServiceDefaults\Courier-Management-System.ServiceDefaults.csproj"/>
-    </ItemGroup>
-
-    <ItemGroup>
-        <Folder Include="Data-Access-Layer\DTOs\"/>
-        <Folder Include="Data-Access-Layer\Services\"/>
-        <Folder Include="Domain-Layer\Entities\"/>
-        <Folder Include="Domain-Layer\Interfaces\"/>
     </ItemGroup>
 
 </Project>
