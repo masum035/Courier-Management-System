@@ -63,10 +63,7 @@ public static class Extensions
     {
         var useOtlpExporter = !string.IsNullOrWhiteSpace(builder.Configuration["OTEL_EXPORTER_OTLP_ENDPOINT"]);
 
-        if (useOtlpExporter)
-        {
-            builder.Services.AddOpenTelemetry().UseOtlpExporter();
-        }
+        if (useOtlpExporter) builder.Services.AddOpenTelemetry().UseOtlpExporter();
 
         // Uncomment the following lines to enable the Prometheus exporter (requires the OpenTelemetry.Exporter.Prometheus.AspNetCore package)
         // builder.Services.AddOpenTelemetry()
