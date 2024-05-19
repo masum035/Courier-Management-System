@@ -1,11 +1,12 @@
 using Courier_Management_System.Domain_Layer.Entities;
+using Microsoft.AspNetCore.Identity;
 using IdentityRole = Microsoft.AspNetCore.Identity.IdentityRole;
 
 namespace Courier_Management_System.Infrastructure.DB;
 
 public static class DbHelper
 {
-    public static void SeedRoles(Microsoft.AspNetCore.Identity.RoleManager<IdentityRole> roleManager)
+    public static void SeedRoles(RoleManager<IdentityRole> roleManager)
     {
         if (!roleManager.RoleExistsAsync("Admin").Result)
         {
@@ -20,7 +21,7 @@ public static class DbHelper
         }
     }
     
-    public static void SeedUsers(Microsoft.AspNetCore.Identity.UserManager<ApplicationUser> userManager)
+    public static void SeedUsers(UserManager<ApplicationUser> userManager)
     {
         if (userManager.FindByNameAsync("admin").Result == null)
         {

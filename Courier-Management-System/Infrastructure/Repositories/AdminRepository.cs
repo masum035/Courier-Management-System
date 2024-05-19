@@ -8,25 +8,20 @@ namespace Courier_Management_System.Infrastructure.Repositories;
 
 public class AdminRepository : IAdminRepository
 {
-    private readonly UserManager<Admin?> _userManager;
+    private readonly UserManager<ApplicationUser> _userManager;
 
-    public AdminRepository(UserManager<Admin?> userManager)
+    public AdminRepository(UserManager<ApplicationUser> userManager)
     {
         _userManager = userManager;
     }
     public async Task<Admin?> GetByIdAsync(string id)
     {
-        return await _userManager.Users.FirstOrDefaultAsync(u => u.Id == id);
+        return await _userManager.Users.OfType<Admin>().FirstOrDefaultAsync(u => u.Id == id);
     }
 
     public async Task<IEnumerable<Admin?>> GetAllAsync()
     {
-        return await _userManager.Users.ToListAsync();
-    }
-
-    public async Task AddAsync(Admin? admin)
-    {
-        throw new NotImplementedException();
+        return await _userManager.Users.OfType<Admin>().ToListAsync();
     }
 
     public async Task AddAsync(Admin? admin, string password)
@@ -45,7 +40,7 @@ public class AdminRepository : IAdminRepository
 
     public async Task DeleteAsync(string id)
     {
-        var admin = await _userManager.Users.FirstOrDefaultAsync(u => u.Id == id);
+        var admin = await _userManager.Users.OfType<Admin>().FirstOrDefaultAsync(u => u.Id == id);
         if (admin != null)
         {
             await _userManager.DeleteAsync(admin);

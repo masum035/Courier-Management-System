@@ -8,21 +8,21 @@ namespace Courier_Management_System.Infrastructure.Repositories;
 
 public class CustomerRepository : ICustomerRepository
 {
-    private readonly UserManager<Customer> _userManager;
+    private readonly UserManager<ApplicationUser> _userManager;
 
-    public CustomerRepository(UserManager<Customer> userManager)
+    public CustomerRepository(UserManager<ApplicationUser> userManager)
     {
         _userManager = userManager;
     }
 
     public async Task<Customer?> GetByIdAsync(string id)
     {
-        return await _userManager.Users.FirstOrDefaultAsync(u => u.Id == id);
+        return await _userManager.Users.OfType<Customer>().FirstOrDefaultAsync(u => u.Id == id);
     }
 
     public async Task<List<Customer?>> GetAllAsync()
     {
-        return await _userManager.Users.ToListAsync();
+        return await _userManager.Users.OfType<Customer>().ToListAsync();
     }
 
     public async Task AddAsync(Customer? customer, string password)
@@ -41,7 +41,7 @@ public class CustomerRepository : ICustomerRepository
 
     public async Task DeleteAsync(string id)
     {
-        var customer = await _userManager.Users.FirstOrDefaultAsync(u => u.Id == id);
+        var customer = await _userManager.Users.OfType<Customer>().FirstOrDefaultAsync(u => u.Id == id);
         if (customer != null)
         {
             await _userManager.DeleteAsync(customer);
