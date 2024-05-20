@@ -31,7 +31,7 @@ public class ShipmentService : IShipmentService
                 {
                     Id = shipment.Customer.Id,
                     FullName = shipment.Customer.FullName,
-                    PhoneNumber = shipment.Customer.PhoneNumber,
+                    PhoneNumber = shipment.Customer.Email,
                     Address = shipment.Customer.Address,
                     DateJoined = shipment.Customer.DateJoined
                 }
@@ -55,7 +55,7 @@ public class ShipmentService : IShipmentService
             {
                 Id = s.Customer.Id,
                 FullName = s.Customer.FullName,
-                PhoneNumber = s.Customer.PhoneNumber,
+                PhoneNumber = s.Customer.Email,
                 Address = s.Customer.Address,
                 DateJoined = s.Customer.DateJoined
             }
@@ -113,7 +113,7 @@ public class ShipmentService : IShipmentService
             {
                 Id = s.Customer.Id,
                 FullName = s.Customer.FullName,
-                PhoneNumber = s.Customer.PhoneNumber,
+                PhoneNumber = s.Customer.Email,
                 Address = s.Customer.Address,
                 DateJoined = s.Customer.DateJoined
             }

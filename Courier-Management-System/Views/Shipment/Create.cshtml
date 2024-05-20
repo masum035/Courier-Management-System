@@ -1,0 +1,44 @@
+@model ShipmentViewModel
+
+@{
+    ViewData["Title"] = "Create Shipment";
+    ViewBag.Title = "title";
+    Layout = "_Layout";
+}
+
+<h2>Create Shipment</h2>
+
+<form asp-action="Create" method="post">
+    <div class="form-group">
+        <label asp-for="ConsignmentNumber"></label>
+        <input asp-for="ConsignmentNumber" class="form-control" />
+        <span asp-validation-for="ConsignmentNumber" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="PickupDate"></label>
+        <input asp-for="PickupDate" class="form-control" />
+        <span asp-validation-for="PickupDate" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Status"></label>
+        <input asp-for="Status" class="form-control" />
+        <span asp-validation-for="Status" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="ShipperInfo"></label>
+        <input asp-for="ShipperInfo" class="form-control" />
+        <span asp-validation-for="ShipperInfo" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="ReceiverInfo"></label>
+        <input asp-for="ReceiverInfo" class="form-control" />
+        <span asp-validation-for="ReceiverInfo" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="CustomerId"></label>
+        <input asp-for="CustomerId" class="form-control" />
+        <span asp-validation-for="CustomerId" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Create</button>
+    <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+</form>

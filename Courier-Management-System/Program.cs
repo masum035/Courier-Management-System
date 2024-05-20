@@ -63,6 +63,6 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
     "default",
-    "{controller=Home}/{action=Index}/{id?}");
+    "{controller=Shipment}/{action=Index}/{id?}");
 
 app.Run();

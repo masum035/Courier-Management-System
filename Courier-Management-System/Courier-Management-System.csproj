@@ -24,4 +24,14 @@
         <ProjectReference Include="..\Courier-Management-System.ServiceDefaults\Courier-Management-System.ServiceDefaults.csproj"/>
     </ItemGroup>
 
+    <ItemGroup>
+      <_ContentIncludedByDefault Remove="Views\Pages\Account\Login.cshtml" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <AdditionalFiles Include="Views\Account\Login.cshtml" />
+      <AdditionalFiles Include="Views\Admin\Index.cshtml" />
+      <AdditionalFiles Include="Views\Customer\Index.cshtml" />
+    </ItemGroup>
+
 </Project>

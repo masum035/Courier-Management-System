@@ -1,0 +1,55 @@
+@model Courier_Management_System.Data_Access_Layer.DTOs.ShipmentDTO
+
+@{
+    ViewBag.Title = "title";
+    Layout = "_Layout";
+}
+
+<h2>Shipment Details</h2>
+
+<div>
+    <h4>Shipment</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            Consignment Number
+        </dt>
+        <dd class = "col-sm-10">
+            @Model.ConsignmentNumber
+        </dd>
+        <dt class = "col-sm-2">
+            Pickup Date
+        </dt>
+        <dd class = "col-sm-10">
+            @Model.PickupDate
+        </dd>
+        <dt class = "col-sm-2">
+            Status
+        </dt>
+        <dd class = "col-sm-10">
+            @Model.Status
+        </dd>
+        <dt class = "col-sm-2">
+            Shipper Info
+        </dt>
+        <dd class = "col-sm-10">
+            @Model.ShipperInfo
+        </dd>
+        <dt class = "col-sm-2">
+            Receiver Info
+        </dt>
+        <dd class = "col-sm-10">
+            @Model.ReceiverInfo
+        </dd>
+        <dt class = "col-sm-2">
+            Customer Id
+        </dt>
+        <dd class = "col-sm-10">
+            @Model.CustomerId
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-warning">Edit</a> |
+    <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+</div>

@@ -21,7 +21,7 @@ public class CustomerService : ICustomerService
             {
                 Id = customer.Id,
                 FullName = customer.FullName,
-                PhoneNumber = customer.PhoneNumber,
+                PhoneNumber = customer.Email,
                 Address = customer.Address,
                 DateJoined = customer.DateJoined,
                 Shipments = customer.Shipments?.Select(s => new ShipmentDTO
@@ -44,7 +44,7 @@ public class CustomerService : ICustomerService
             {
                 Id = c.Id,
                 FullName = c.FullName,
-                PhoneNumber = c.PhoneNumber,
+                PhoneNumber = c.Email,
                 Address = c.Address,
                 DateJoined = c.DateJoined,
                 Shipments = c.Shipments?.Select(s => new ShipmentDTO
@@ -65,7 +65,7 @@ public class CustomerService : ICustomerService
             var customer = new Customer
             {
                 Id = new Guid().ToString(),
-                PhoneNumber = customerDto.PhoneNumber,
+                Email = customerDto.PhoneNumber,
                 FullName = customerDto.FullName,
                 Address = customerDto.Address,
                 DateJoined = customerDto.DateJoined
@@ -78,7 +78,7 @@ public class CustomerService : ICustomerService
             var customer = new Customer
             {
                 Id = customerDto.Id,
-                PhoneNumber = customerDto.PhoneNumber,
+                Email = customerDto.PhoneNumber,
                 FullName = customerDto.FullName,
                 Address = customerDto.Address,
                 DateJoined = customerDto.DateJoined

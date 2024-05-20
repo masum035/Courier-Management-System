@@ -17,4 +17,8 @@
         <ProjectReference Include="..\Courier-Management-System\Courier-Management-System.csproj"/>
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="Pages\" />
+    </ItemGroup>
+
 </Project>

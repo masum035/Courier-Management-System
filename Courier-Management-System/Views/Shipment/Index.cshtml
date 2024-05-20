@@ -1,0 +1,43 @@
+@model System.Collections.Generic.IEnumerable<Courier_Management_System.Data_Access_Layer.DTOs.ShipmentDTO>
+
+@{
+    ViewData["Title"] = "Shipments";
+    ViewBag.Title = "title";
+    Layout = "_Layout";
+}
+
+<h2>Shipment</h2>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">Create New Shipment</a>
+</p>
+
+<table class="table">
+    <thead>
+    <tr>
+        <th>Consignment Number</th>
+        <th>Pickup Date</th>
+        <th>Status</th>
+        <th>Shipper Info</th>
+        <th>Receiver Info</th>
+        <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.ConsignmentNumber</td>
+            <td>@item.PickupDate.ToShortDateString()</td>
+            <td>@item.Status</td>
+            <td>@item.ShipperInfo</td>
+            <td>@item.ReceiverInfo</td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-warning">Edit</a>
+                <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-sm btn-danger">Delete</a>
+                <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-sm btn-info">Details</a>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>

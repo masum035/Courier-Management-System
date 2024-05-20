@@ -23,7 +23,7 @@ public class AppDbContext : IdentityDbContext<ApplicationUser, IdentityRole, str
         {
             entity.ToTable("Customers");
             entity.Property(c => c.FullName).IsRequired().HasMaxLength(100);
-            entity.Property(c => c.PhoneNumber).IsRequired().HasMaxLength(13); 
+            entity.Property(c => c.Email).IsRequired().HasMaxLength(13); 
             entity.Property(c => c.Address).IsRequired().HasMaxLength(200);
             entity.Property(c => c.DateJoined).IsRequired();
             entity.HasMany(c => c.Shipments)

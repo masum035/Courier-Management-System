@@ -28,11 +28,11 @@ public static class DbHelper
             var adminUser = new Admin
             {
                 Id = new Guid().ToString(), 
-                Email = "admin@example.com", 
+                Email = "admin@gmail.com", 
                 FullName = "Admin User", 
                 DateJoined = DateTime.UtcNow
             };
-            var result = userManager.CreateAsync(adminUser, "Admin@123").Result;
+            var result = userManager.CreateAsync(adminUser, "admin123").Result;
 
             if (result.Succeeded)
             {
@@ -43,11 +43,11 @@ public static class DbHelper
         if (userManager.FindByNameAsync("customer").Result == null)
         {
             var customerUser = new Customer { 
-                PhoneNumber = "01551805248", 
+                Email = "customer@gmail.com", 
                 FullName = "Customer User", 
-                Address = "123 Customer St", 
+                Address = "Uttara, Dhaka, Bangladesh", 
                 DateJoined = DateTime.UtcNow };
-            var result = userManager.CreateAsync(customerUser, "Customer@123").Result;
+            var result = userManager.CreateAsync(customerUser, "customer123").Result;
 
             if (result.Succeeded)
             {
